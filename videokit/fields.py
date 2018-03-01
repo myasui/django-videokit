@@ -276,7 +276,7 @@ class VideoSpecFieldFile(VideoFieldFile):
         file_string = '%s%s%s' % (self.source_file.name, self.field.format, str(datetime.now()))
         try:
             import md5
-            hash = md5.new(file_string).hexdigest()
+            hash = md5.new(file_string.encode('utf8')).hexdigest()
         except ImportError:
             from hashlib import md5
             hash = md5(file_string.encode()).hexdigest()
