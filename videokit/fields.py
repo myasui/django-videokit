@@ -248,7 +248,7 @@ class VideoSpecFieldFile(VideoFieldFile):
 
             options = []
             if self.field.format == 'mp4':
-                options = ['-c:v', 'libx264', '-c:a', 'libfdk_aac', '-b:v', '1M', '-b:a', '128k']
+                options = ['-c:v', 'libx264', '-c:a', 'aac', '-b:v', '1M', '-b:a', '128k']
             elif self.field.format == 'ogg':
                 options = ['-c:v', 'libtheora', '-c:a', 'libvorbis', '-q:v', '10', '-q:a', '6']
             elif self.field.format == 'webm':
