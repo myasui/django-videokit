@@ -40,7 +40,7 @@ def generate_video(file_name, source_file_name, options = []):
     process.wait()
 
     processed_file = os.path.join(base, media_root, file_name)
-    f = File(open(temp_file, 'r'))
+    f = File(open(temp_file, 'rb'))
     default_storage.save(processed_file, f)
     f.close()
 
